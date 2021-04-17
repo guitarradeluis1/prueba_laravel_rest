@@ -23,6 +23,7 @@ class CreateBooksTable extends Migration
             $table->string("publish_date")->nullable();
             $table->timestamps();
         });
+        # En los seeders agrege datos para su creación
     }
 
     /**
