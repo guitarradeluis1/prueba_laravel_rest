@@ -22,7 +22,7 @@ Route::post('books/create/{isbn}', [booksController::class, 'create']);
 Route::post('books/delete/{isbn}', [booksController::class, 'delete']);
 Route::get('books/{isbn}', [booksController::class, 'books']);
 Route::get('books/', [booksController::class, 'index']);
-Route::get('/', [booksController::class, 'index']);
+Route::get('/', [booksController::class, 'pagina']);
 /*
 POST (CREAR): /api/books/create/{isbn}
 POST (ELIMINAR): /api/books/delete/{isbn}

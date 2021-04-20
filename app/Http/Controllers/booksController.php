@@ -13,10 +13,14 @@ use function PHPUnit\Framework\isNull;
 
 class booksController extends Controller
 {
+    public function pagina(){
+        return view('datos.index');
+    }
+
     public function index(){
         $r = (object) array();
         try{
-            $books = Book::paginate();
+            $books = Book::paginate(2);
             $r = $books;
         }catch (Exception $e) {
             $r->message = $e->getMessage();
@@ -31,17 +35,9 @@ class booksController extends Controller
             if($data === null) {
                 throw new Exception("ISBN {$ISBN} no encontrado");;
             }
-            #print_r($data); exit;
-            /*
-            $r->response = array(
-                'book' => $a,
-                'authors' => $a->authors,
-                'covers' => $a->covers,
-            );
-            */
             return view('xml', ['data'=>$data]);
         }catch (Exception $e) {
-            return view('errorXml');;
+            return view('errorXml');
         }
     }
 
