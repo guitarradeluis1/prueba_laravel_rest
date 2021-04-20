@@ -112,7 +112,7 @@ var obj = {
         previous.classList = ['page-item'].join(' ');
         var a_previous = document.createElement('a');
         a_previous.classList = ['page-link'].join(' ');
-        a_previous.innerHTML = 'Next';
+        a_previous.innerHTML = 'Previous';
         a_previous.onclick = function(){
             if(obj.pagina > 1){
                 obj.pagina = obj.pagina - 1;
